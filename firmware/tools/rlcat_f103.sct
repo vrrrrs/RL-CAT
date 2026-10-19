@@ -1,0 +1,21 @@
+/* RL-CAT STM32F103C8T6 linker scatter file
+ *
+ * 与 CubeMX/Keil 的默认布局等价：
+ *   IROM  0x08000000  64 KB   (Flash)
+ *   IRAM  0x20000000  20 KB   (SRAM)
+ *
+ * 用途：armclang 命令行构建（tools/build.sh / build.ps1）。
+ * Keil GUI 工程不需要这个文件（用 Target 页的默认布局即可）。
+ */
+
+LR_IROM1 0x08000000 0x00010000  {    ; 64 KB Flash
+  ER_IROM1 0x08000000 0x00010000  {
+    *.o (RESET, +First)
+    *(InRoot$$Sections)
+    .ANY (+RO)
+    .ANY (+XO)
+  }
+  RW_IRAM1 0x20000000 0x00005000  {  ; 20 KB SRAM
+    .ANY (+RW +ZI)
+  }
+}

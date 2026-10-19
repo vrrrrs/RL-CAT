@@ -1,0 +1,47 @@
+# RL-CAT ESP32-C3 bridge -- ESP-IDF defaults
+# Applied by PlatformIO on top of the board defaults.
+
+# ---- console -------------------------------------------------------------
+# The board's only USB port is the C3 native USB-Serial-JTAG (VID:PID 303A:1001).
+# Put the console there so UART0/UART1 stay free for the STM32 link and so
+# `pio device monitor` works with a single USB cable.
+CONFIG_ESP_CONSOLE_USB_SERIAL_JTAG=y
+CONFIG_ESP_CONSOLE_UART_DEFAULT=n
+CONFIG_ESP_CONSOLE_NONE=n
+
+# ---- flash ---------------------------------------------------------------
+# On-board embedded flash is 4 MB (verified with esptool flash_id).
+CONFIG_ESPTOOLPY_FLASHSIZE_4MB=y
+CONFIG_ESPTOOLPY_FLASHSIZE="4MB"
+
+# Custom partition table: the file itself is declared in platformio.ini via
+#   board_build.partitions = partitions.csv
+# because PlatformIO generates the flashed table on its own and ignores these
+# Kconfig options (see the comment in platformio.ini).  They are kept consistent
+# here only so that a plain `idf.py` build would behave the same way.
+CONFIG_PARTITION_TABLE_CUSTOM=y
+CONFIG_PARTITION_TABLE_CUSTOM_FILENAME="partitions.csv"
+
+# ---- scheduling ----------------------------------------------------------
+# 1 kHz tick: the 100 Hz bridge cycle and the 3 ms servo-frame timings in
+# docs/30-firmware.md §6.2 are expressed in ms; 1 kHz keeps jitter granularity
+# at 1 ms instead of 10 ms.
+CONFIG_FREERTOS_HZ=1000
+
+# ---- logging -------------------------------------------------------------
+CONFIG_LOG_DEFAULT_LEVEL_INFO=y
+CONFIG_LOG_MAXIMUM_LEVEL_DEBUG=y
+
+# ---- watchdog ------------------------------------------------------------
+# ⚠️ The option names matter: IDF 5.x uses ESP_TASK_WDT_EN (component enabled)
+# and ESP_TASK_WDT_INIT (start it during startup).  An earlier version of this
+# file wrote CONFIG_ESP_TASK_WDT=y, which is not a real option -- IDF therefore
+# started the watchdog itself and rlca's esp_task_wdt_init() hit
+# "E task_wdt: esp_task_wdt_init(517): TWDT already initialized" at every boot.
+# We initialise it ourselves in main.c (timeout + panic are runtime settings:
+# RLCA_TWDT_TIMEOUT_S / RLCA_TWDT_PANIC), so disable the automatic start.
+CONFIG_ESP_TASK_WDT_EN=y
+CONFIG_ESP_TASK_WDT_INIT=n
+
+# ---- misc ----------------------------------------------------------------
+CONFIG_ESP_MAIN_TASK_STACK_SIZE=4096

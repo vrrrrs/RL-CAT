@@ -1,0 +1,75 @@
+﻿name: CI
+
+# ⚠️ 本项目的特别之处：**1370 项测试不需要任何硬件**。
+#    很多机器人项目没法做 CI，因为这个项目把"业务逻辑"和"硬件访问"
+#    做成了可注入的端口（见 docs/30-firmware.md），所以能在 runner 上全跑。
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  # ---------------------------------------------------------------- 固件主机单测
+  #
+  #  ⚠️ 逻辑在 firmware/tools/test-host.sh 里，与 Windows 的 test-host.ps1 等价。
+  #     不要在 YAML 里手写 gcc 命令 —— 第一版就是这么写的，结果：
+  #     每套用例需要的源文件集合不同（pure / +servo_bus / +app_mode），
+  #     而手写版把所有 .c 一股脑编进去 ⇒ 链接冲突 / 缺符号 ⇒ 直接红。
+  #     写成脚本还有个好处：本地 `bash firmware/tools/test-host.sh` 就能复现 CI。
+  firmware-host-tests:
+    name: 固件主机单测（7 套 / 1370 项，无需硬件）
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: 编译器版本
+        run: gcc --version | head -1
+      - name: 构建并运行全部主机测试
+        run: bash firmware/tools/test-host.sh
+
+  # ---------------------------------------------------------------- Pi 侧测试
+  pi-tests:
+    name: 树莓派侧测试（协议 / 链路 / 遥测 / 策略对拍）
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: 安装依赖
+        run: python -m pip install --upgrade pip numpy pyserial
+      - name: 运行 run_checks.sh
+        working-directory: pi
+        run: |
+          chmod +x run_checks.sh
+          ./run_checks.sh
+
+  # ---------------------------------------------------------------- 策略一致性
+  policy-verify:
+    name: 策略观测布局对拍（防止误改 47 维布局而不自知）
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python -m pip install --upgrade pip numpy
+      - name: 对拍仿真轨迹（期望 max|diff| = 0）
+        working-directory: pi
+        run: python rl_policy.py --selftest
+
+  # ---------------------------------------------------------------- 路径与秘密
+  #
+  #  ⚠️ 逻辑在 .github/scripts/hygiene.sh 里，不直接写在 YAML —— 因为
+  #     ① 本地可以 `bash .github/scripts/hygiene.sh` 自查，不用等 CI
+  #     ② 避免 YAML + shell + 正则三层转义叠加
+  #        （第一版写在这里时用了 grep -E 不支持的负向先行断言，静默不生效）
+  hygiene:
+    name: 卫生检查（无个人路径 / 无密钥 / 无大文件）
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0        # git grep 需要完整历史
+      - name: 运行卫生检查
+        run: bash .github/scripts/hygiene.sh

@@ -1,0 +1,818 @@
+{
+  "job_id": "local_muvgn1zu_up1pff",
+  "source_file": "CAT_defeature.SLDASM_urdf.zip",
+  "coordinate_schema_version": 3,
+  "coordinate_frame": "z_up_x_forward",
+  "parts": [
+    {
+      "part_id": "part_1",
+      "name": "base_link_visual_1",
+      "mesh_file": "meshes/part_1.stl",
+      "bbox": {
+        "min": [
+          -82,
+          -65.2300033569336,
+          -20.000001907348633
+        ],
+        "max": [
+          82,
+          65.22999572753906,
+          48
+        ]
+      },
+      "volume_estimate": null,
+      "transform": {
+        "xyz": [
+          0,
+          0,
+          0
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      "display_role": "visual"
+    },
+    {
+      "part_id": "part_2",
+      "name": "base_link_collision_2",
+      "mesh_file": "meshes/part_2.stl",
+      "bbox": {
+        "min": [
+          -82,
+          -65.2300033569336,
+          -20.000001907348633
+        ],
+        "max": [
+          82,
+          65.22999572753906,
+          48
+        ]
+      },
+      "volume_estimate": null,
+      "transform": {
+        "xyz": [
+          0,
+          0,
+          0
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      "display_role": "collision"
+    },
+    {
+      "part_id": "part_3",
+      "name": "lf_hip_visual_3",
+      "mesh_file": "meshes/part_3.stl",
+      "bbox": {
+        "min": [
+          33,
+          38.72999954223633,
+          -11.784998893737793
+        ],
+        "max": [
+          114.0999984741211,
+          77.2300033569336,
+          33.44499969482422
+        ]
+      },
+      "volume_estimate": null,
+      "transform": {
+        "xyz": [
+          0,
+          0,
+          0
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      "display_role": "visual"
+    },
+    {
+      "part_id": "part_4",
+      "name": "lf_hip_collision_4",
+      "mesh_file": "meshes/part_4.stl",
+      "bbox": {
+        "min": [
+          33,
+          38.72999954223633,
+          -11.784998893737793
+        ],
+        "max": [
+          114.0999984741211,
+          77.2300033569336,
+          33.44499969482422
+        ]
+      },
+      "volume_estimate": null,
+      "transform": {
+        "xyz": [
+          0,
+          0,
+          0
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      "display_role": "collision"
+    },
+    {
+      "part_id": "part_5",
+      "name": "lf_thigh_visual_5",
+      "mesh_file": "meshes/part_5.stl",
+      "bbox": {
+        "min": [
+          30.69637680053711,
+          47.22999954223633,
+          -73.1061019897461
+        ],
+        "max": [
+          111.02191925048828,
+          86.7300033569336,
+          11.207859992980957
+        ]
+      },
+      "volume_estimate": null,
+      "transform": {
+        "xyz": [
+          0,
+          0,
+          0
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      "display_role": "visual"
+    },
+    {
+      "part_id": "part_6",
+      "name": "lf_thigh_collision_6",
+      "mesh_file": "meshes/part_6.stl",
+      "bbox": {
+        "min": [
+          30.69637680053711,
+          47.22999954223633,
+          -73.1061019897461
+        ],
+        "max": [
+          111.02191925048828,
+          86.7300033569336,
+          11.207859992980957
+        ]
+      },
+      "volume_estimate": null,
+      "transform": {
+        "xyz": [
+          0,
+          0,
+          0
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      "display_role": "collision"
+    },
+    {
+      "part_id": "part_7",
+      "name": "lf_calf_visual_7",
+      "mesh_file": "meshes/part_7.stl",
+      "bbox": {
+        "min": [
+          34.028202056884766,
+          83.72999572753906,
+          -137.35948181152344
+        ],
+        "max": [
+          134.7694854736328,
+          96.2300033569336,
+          -44.072757720947266
+        ]
+      },
+      "volume_estimate": null,
+      "transform": {
+        "xyz": [
+          0,
+          0,
+          0
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      "display_role": "visual"
+    },
+    {
+      "part_id": "part_8",
+      "name": "lf_calf_collision_8",
+      "mesh_file": "meshes/part_8.stl",
+      "bbox": {
+        "min": [
+          34.028202056884766,
+          83.72999572753906,
+          -137.35948181152344
+        ],
+        "max": [
+          134.7694854736328,
+          96.2300033569336,
+          -44.072757720947266
+        ]
+      },
+      "volume_estimate": null,
+      "transform": {
+        "xyz": [
+          0,
+          0,
+          0
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      "display_role": "collision"
+    },
+    {
+      "part_id": "part_9",
+      "name": "lb_hip_visual_9",
+      "mesh_file": "meshes/part_9.stl",
+      "bbox": {
+        "min": [
+          -114.0999984741211,
+          38.72999954223633,
+          -11.785000801086426
+        ],
+        "max": [
+          -33,
+          77.2300033569336,
+          33.44499969482422
+        ]
+      },
+      "volume_estimate": null,
+      "transform": {
+        "xyz": [
+          0,
+          0,
+          0
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      "display_role": "visual"
+    },
+    {
+      "part_id": "part_10",
+      "name": "lb_hip_collision_10",
+      "mesh_file": "meshes/part_10.stl",
+      "bbox": {
+        "min": [
+          -114.0999984741211,
+          38.72999954223633,
+          -11.785000801086426
+        ],
+        "max": [
+          -33,
+          77.2300033569336,
+          33.44499969482422
+        ]
+      },
+      "volume_estimate": null,
+      "transform": {
+        "xyz": [
+          0,
+          0,
+          0
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      "display_role": "collision"
+    },
+    {
+      "part_id": "part_11",
+      "name": "lb_thigh_visual_11",
+      "mesh_file": "meshes/part_11.stl",
+      "bbox": {
+        "min": [
+          -163.73098754882812,
+          47.22999954223633,
+          -74.6351318359375
+        ],
+        "max": [
+          -85.230712890625,
+          86.7300033569336,
+          11.214994430541992
+        ]
+      },
+      "volume_estimate": null,
+      "transform": {
+        "xyz": [
+          0,
+          0,
+          0
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      "display_role": "visual"
+    },
+    {
+      "part_id": "part_12",
+      "name": "lb_thigh_collision_12",
+      "mesh_file": "meshes/part_12.stl",
+      "bbox": {
+        "min": [
+          -163.73098754882812,
+          47.22999954223633,
+          -74.6351318359375
+        ],
+        "max": [
+          -85.230712890625,
+          86.7300033569336,
+          11.214994430541992
+        ]
+      },
+      "volume_estimate": null,
+      "transform": {
+        "xyz": [
+          0,
+          0,
+          0
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      "display_role": "collision"
+    },
+    {
+      "part_id": "part_13",
+      "name": "lb_calf_visual_13",
+      "mesh_file": "meshes/part_13.stl",
+      "bbox": {
+        "min": [
+          -160.352294921875,
+          83.72999572753906,
+          -143.16856384277344
+        ],
+        "max": [
+          -63.59959411621094,
+          96.2300033569336,
+          -45.773319244384766
+        ]
+      },
+      "volume_estimate": null,
+      "transform": {
+        "xyz": [
+          0,
+          0,
+          0
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      "display_role": "visual"
+    },
+    {
+      "part_id": "part_14",
+      "name": "lb_calf_collision_14",
+      "mesh_file": "meshes/part_14.stl",
+      "bbox": {
+        "min": [
+          -160.352294921875,
+          83.72999572753906,
+          -143.16856384277344
+        ],
+        "max": [
+          -63.59959411621094,
+          96.2300033569336,
+          -45.773319244384766
+        ]
+      },
+      "volume_estimate": null,
+      "transform": {
+        "xyz": [
+          0,
+          0,
+          0
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      "display_role": "collision"
+    },
+    {
+      "part_id": "part_15",
+      "name": "rf_hip_visual_15",
+      "mesh_file": "meshes/part_15.stl",
+      "bbox": {
+        "min": [
+          33,
+          -77.2300033569336,
+          -11.785000801086426
+        ],
+        "max": [
+          114.0999984741211,
+          -38.72999954223633,
+          33.44499969482422
+        ]
+      },
+      "volume_estimate": null,
+      "transform": {
+        "xyz": [
+          0,
+          0,
+          0
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      "display_role": "visual"
+    },
+    {
+      "part_id": "part_16",
+      "name": "rf_hip_collision_16",
+      "mesh_file": "meshes/part_16.stl",
+      "bbox": {
+        "min": [
+          33,
+          -77.2300033569336,
+          -11.785000801086426
+        ],
+        "max": [
+          114.0999984741211,
+          -38.72999954223633,
+          33.44499969482422
+        ]
+      },
+      "volume_estimate": null,
+      "transform": {
+        "xyz": [
+          0,
+          0,
+          0
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      "display_role": "collision"
+    },
+    {
+      "part_id": "part_17",
+      "name": "rf_thigh_visual_17",
+      "mesh_file": "meshes/part_17.stl",
+      "bbox": {
+        "min": [
+          30.026138305664062,
+          -86.73020935058594,
+          -72.49165344238281
+        ],
+        "max": [
+          111.09574890136719,
+          -47.23015594482422,
+          11.21070671081543
+        ]
+      },
+      "volume_estimate": null,
+      "transform": {
+        "xyz": [
+          0,
+          0,
+          0
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      "display_role": "visual"
+    },
+    {
+      "part_id": "part_18",
+      "name": "rf_thigh_collision_18",
+      "mesh_file": "meshes/part_18.stl",
+      "bbox": {
+        "min": [
+          30.026138305664062,
+          -86.73020935058594,
+          -72.49165344238281
+        ],
+        "max": [
+          111.09574890136719,
+          -47.23015594482422,
+          11.21070671081543
+        ]
+      },
+      "volume_estimate": null,
+      "transform": {
+        "xyz": [
+          0,
+          0,
+          0
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      "display_role": "collision"
+    },
+    {
+      "part_id": "part_19",
+      "name": "rf_calf_visual_19",
+      "mesh_file": "meshes/part_19.stl",
+      "bbox": {
+        "min": [
+          33.36412048339844,
+          -96.23023986816406,
+          -137.87612915039062
+        ],
+        "max": [
+          133.02310180664062,
+          -83.73014831542969,
+          -43.4438362121582
+        ]
+      },
+      "volume_estimate": null,
+      "transform": {
+        "xyz": [
+          0,
+          0,
+          0
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      "display_role": "visual"
+    },
+    {
+      "part_id": "part_20",
+      "name": "rf_calf_collision_20",
+      "mesh_file": "meshes/part_20.stl",
+      "bbox": {
+        "min": [
+          33.36412048339844,
+          -96.23023986816406,
+          -137.87612915039062
+        ],
+        "max": [
+          133.02310180664062,
+          -83.73014831542969,
+          -43.4438362121582
+        ]
+      },
+      "volume_estimate": null,
+      "transform": {
+        "xyz": [
+          0,
+          0,
+          0
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      "display_role": "collision"
+    },
+    {
+      "part_id": "part_21",
+      "name": "rb_hip_visual_21",
+      "mesh_file": "meshes/part_21.stl",
+      "bbox": {
+        "min": [
+          -114.0999984741211,
+          -77.22999572753906,
+          -11.785000801086426
+        ],
+        "max": [
+          -33,
+          -38.72999954223633,
+          33.44499969482422
+        ]
+      },
+      "volume_estimate": null,
+      "transform": {
+        "xyz": [
+          0,
+          0,
+          0
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      "display_role": "visual"
+    },
+    {
+      "part_id": "part_22",
+      "name": "rb_hip_collision_22",
+      "mesh_file": "meshes/part_22.stl",
+      "bbox": {
+        "min": [
+          -114.0999984741211,
+          -77.22999572753906,
+          -11.785000801086426
+        ],
+        "max": [
+          -33,
+          -38.72999954223633,
+          33.44499969482422
+        ]
+      },
+      "volume_estimate": null,
+      "transform": {
+        "xyz": [
+          0,
+          0,
+          0
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      "display_role": "collision"
+    },
+    {
+      "part_id": "part_23",
+      "name": "rb_thigh_visual_23",
+      "mesh_file": "meshes/part_23.stl",
+      "bbox": {
+        "min": [
+          -163.54844665527344,
+          -86.7300033569336,
+          -74.78510284423828
+        ],
+        "max": [
+          -85.22794342041016,
+          -47.22999954223633,
+          11.214961051940918
+        ]
+      },
+      "volume_estimate": null,
+      "transform": {
+        "xyz": [
+          0,
+          0,
+          0
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      "display_role": "visual"
+    },
+    {
+      "part_id": "part_24",
+      "name": "rb_thigh_collision_24",
+      "mesh_file": "meshes/part_24.stl",
+      "bbox": {
+        "min": [
+          -163.54844665527344,
+          -86.7300033569336,
+          -74.78510284423828
+        ],
+        "max": [
+          -85.22794342041016,
+          -47.22999954223633,
+          11.214961051940918
+        ]
+      },
+      "volume_estimate": null,
+      "transform": {
+        "xyz": [
+          0,
+          0,
+          0
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      "display_role": "collision"
+    },
+    {
+      "part_id": "part_25",
+      "name": "rb_calf_visual_25",
+      "mesh_file": "meshes/part_25.stl",
+      "bbox": {
+        "min": [
+          -160.21002197265625,
+          -96.2300033569336,
+          -145.46456909179688
+        ],
+        "max": [
+          -65.64189910888672,
+          -83.72999572753906,
+          -45.936729431152344
+        ]
+      },
+      "volume_estimate": null,
+      "transform": {
+        "xyz": [
+          0,
+          0,
+          0
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      "display_role": "visual"
+    },
+    {
+      "part_id": "part_26",
+      "name": "rb_calf_collision_26",
+      "mesh_file": "meshes/part_26.stl",
+      "bbox": {
+        "min": [
+          -160.21002197265625,
+          -96.2300033569336,
+          -145.46456909179688
+        ],
+        "max": [
+          -65.64189910888672,
+          -83.72999572753906,
+          -45.936729431152344
+        ]
+      },
+      "volume_estimate": null,
+      "transform": {
+        "xyz": [
+          0,
+          0,
+          0
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      "display_role": "collision"
+    }
+  ],
+  "warnings": [
+    "已读取 URDF 关节和物理参数；材质、传动及其他原生标签保存在源文件中，工作台当前显示简化材质。",
+    "原始文件和资源随工程保留。工作台使用几何缓存；转换导出只包含本工作台支持的机器人属性。原文件中的特有配置请使用原格式保存。"
+  ]
+}

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  RL-CAT 系统架构图
+  ⚠️ 手写 SVG（不依赖绘图工具），直接用浏览器/GitHub 打开。
+  ⚠️ 配色用【白底 + 深描边】，GitHub 深色模式下也能看清。
+  ⚠️ 布局约束（改坐标前先看这里，否则文字会重叠）：
+       Pi 盒 40..265 | 间隙 150px（放链路标签）| STM32 415..690
+       | 间隙 90px（放总线标签）| 舵机 780..970
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="620"
+     viewBox="0 0 1000 620" font-family="-apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#37474f"/>
+    </marker>
+    <marker id="ar-blue" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1565c0"/>
+    </marker>
+    <style>
+      .t   { font-size: 15px; font-weight: 700; fill: #102027; }
+      .t13 { font-size: 13.5px; font-weight: 700; fill: #102027; }
+      .s   { font-size: 11.5px; fill: #37474f; }
+      .n   { font-size: 10.5px; fill: #546e7a; }
+      .w   { font-size: 11px; font-weight: 700; fill: #1565c0; }
+      .wd  { font-size: 9.5px; fill: #1565c0; }
+      .wc  { font-size: 9.5px; fill: #ef6c00; font-weight: 700; }
+      .g   { font-size: 9.5px; fill: #78909c; }
+    </style>
+  </defs>
+
+  <rect width="1000" height="620" fill="#ffffff"/>
+
+  <text x="500" y="30" text-anchor="middle" font-size="18" font-weight="700" fill="#102027">
+    RL-CAT · System Architecture
+  </text>
+  <text x="500" y="49" text-anchor="middle" class="g">
+    12-DOF quadruped · hard realtime on the MCU, learning on the Pi
+  </text>
+
+  <!-- ===================== Raspberry Pi ===================== -->
+  <rect x="40" y="90" width="225" height="175" rx="10"
+        fill="#e3f2fd" stroke="#1565c0" stroke-width="1.8"/>
+  <text x="56" y="114" class="t">Raspberry Pi 5 (4 GB)</text>
+  <text x="56" y="132" class="n">Linux · not realtime</text>
+  <line x1="56" y1="140" x2="249" y2="140" stroke="#90caf9" stroke-width="1"/>
+  <text x="56" y="158" class="s">• RL policy</text>
+  <text x="66" y="174" class="n">47 → 256 → 128 → 64 → 12</text>
+  <text x="56" y="191" class="s">• numpy MLP, 54 220 params</text>
+  <text x="56" y="208" class="s">• tools: pose / gait / stand_test</text>
+  <text x="66" y="224" class="n">rl_run / linkprobe</text>
+  <text x="56" y="248" class="n">sends targets only —</text>
+  <text x="56" y="261" class="n">owns no deadline</text>
+
+  <!-- ===================== STM32 ===================== -->
+  <rect x="415" y="90" width="275" height="250" rx="10"
+        fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.8"/>
+  <text x="431" y="114" class="t">STM32F103C8 · 72 MHz</text>
+  <text x="431" y="132" class="n">100 Hz hard realtime (10 ms budget)</text>
+  <line x1="431" y1="140" x2="674" y2="140" stroke="#a5d6a7" stroke-width="1"/>
+  <text x="431" y="158" class="s">• link: framed protocol + CRC-16</text>
+  <text x="431" y="175" class="s">• safety layer — 4 e-stop sources:</text>
+  <text x="441" y="191" class="n">link gap · battery · servo temp · operator</text>
+  <text x="431" y="208" class="s">• geometric calibration table</text>
+  <text x="441" y="224" class="n">offset = 2048 − dir·q_calib·SPR</text>
+  <text x="431" y="241" class="s">• mode state machine</text>
+  <text x="441" y="257" class="n">IDLE / STAND / ACTIVE / CALIB / ESTOP</text>
+  <text x="431" y="274" class="s">• servo bus master (SyncWrite)</text>
+  <text x="431" y="291" class="n">100 Hz · 12 joints · 1 Mbps</text>
+  <text x="431" y="318" class="n">⚠ the STM32 is the only layer</text>
+  <text x="431" y="331" class="n">   with a hard deadline</text>
+
+  <!-- ===================== Servos ===================== -->
+  <rect x="780" y="90" width="190" height="175" rx="10"
+        fill="#fff3e0" stroke="#ef6c00" stroke-width="1.8"/>
+  <text x="796" y="114" class="t13">12 × ST-3215-C018</text>
+  <text x="796" y="132" class="n">4096 steps/rev · serial bus</text>
+  <line x1="796" y1="140" x2="954" y2="140" stroke="#ffcc80" stroke-width="1"/>
+  <text x="796" y="158" class="s">3 per leg:</text>
+  <text x="806" y="175" class="n">hip    0° .. 40°</text>
+  <text x="806" y="192" class="n">thigh −35° .. 30° ⚠</text>
+  <text x="806" y="209" class="n">calf  −60° .. 60°</text>
+  <text x="796" y="232" class="n">⚠ sim URDF allows</text>
+  <text x="796" y="245" class="n">thigh up to +90°</text>
+
+  <!-- ===================== Sensors ===================== -->
+  <rect x="415" y="395" width="275" height="86" rx="10"
+        fill="#f3e5f5" stroke="#6a1b9a" stroke-width="1.6"/>
+  <text x="431" y="418" class="t13">Sensors</text>
+  <text x="431" y="437" class="s">• IMU (WitMotion) — soft-I2C, PB8/PB9</text>
+  <text x="431" y="454" class="s">• Battery — ADC1_IN0, 100k/20k</text>
+  <text x="431" y="471" class="n">• Servo feedback — pos/speed/load/temp</text>
+
+  <!-- ===================== ESP32 ===================== -->
+  <rect x="40" y="395" width="225" height="86" rx="10"
+        fill="#eceff1" stroke="#546e7a" stroke-width="1.6" stroke-dasharray="6 4"/>
+  <text x="56" y="418" class="t13">ESP32-C3 (optional)</text>
+  <text x="56" y="437" class="s">• Wi-Fi / TCP bridge</text>
+  <text x="56" y="454" class="s">• mirrors every frame</text>
+  <text x="56" y="471" class="n">• for wireless debug / telemetry</text>
+
+  <!-- ===================== 连线：Pi <-> STM32 ===================== -->
+  <!-- 箭头放在盒子下部，标签块放在上部，避免重叠 -->
+  <line x1="265" y1="255" x2="415" y2="255" stroke="#1565c0" stroke-width="2"
+        marker-end="url(#ar-blue)" marker-start="url(#ar-blue)"/>
+  <text x="340" y="160" text-anchor="middle" class="w">UART 500 kbps</text>
+  <text x="340" y="180" text-anchor="middle" class="wd">↓ CMD_JOINT 38 B</text>
+  <text x="340" y="194" text-anchor="middle" class="wd">       @ 100 Hz</text>
+  <text x="340" y="212" text-anchor="middle" class="wd">↑ TEL_FAST 103 B</text>
+  <text x="340" y="226" text-anchor="middle" class="wd">       @ 100 Hz</text>
+
+  <!-- ===================== 连线：STM32 -> 舵机 ===================== -->
+  <line x1="690" y1="150" x2="780" y2="150" stroke="#ef6c00" stroke-width="2"
+        marker-end="url(#ar)"/>
+  <text x="735" y="128" text-anchor="middle" class="wc">UART 1 Mbps</text>
+  <text x="735" y="170" text-anchor="middle" class="g">half-duplex</text>
+
+  <!-- ===================== 连线：传感器 -> STM32 ===================== -->
+  <line x1="552" y1="395" x2="552" y2="340" stroke="#6a1b9a" stroke-width="1.8"
+        marker-end="url(#ar)"/>
+  <text x="562" y="372" class="g">I2C / ADC</text>
+
+  <!-- ===================== 连线：ESP32 <-> STM32 ===================== -->
+  <line x1="265" y1="438" x2="415" y2="438" stroke="#546e7a" stroke-width="1.6"
+        stroke-dasharray="6 4" marker-end="url(#ar)" marker-start="url(#ar)"/>
+  <text x="340" y="430" text-anchor="middle" class="g">USART3 · 115200</text>
+
+  <!-- ===================== 底部说明 ===================== -->
+  <rect x="40" y="505" width="930" height="95" rx="8"
+        fill="#fafafa" stroke="#cfd8dc" stroke-width="1.2"/>
+  <text x="56" y="527" class="t13">Why two processors</text>
+  <text x="56" y="546" class="s">
+    The Pi runs general-purpose Linux: GC, the GIL, non-RT scheduling, or even a blocking print can stall it
+    for tens of milliseconds (500 ms measured).
+  </text>
+  <text x="56" y="564" class="s">
+    Everything with a hard deadline lives on the MCU. The Pi only produces joint targets — if it stalls,
+    the safety layer sees the stale link and takes over.
+  </text>
+  <text x="56" y="585" class="g">
+    ⚠ The servo bus and the Pi link are independent UARTs. The Pi link was dropped to 500 kbps because
+    20 µs/byte left no margin for RX interrupt latency.
+  </text>
+</svg>

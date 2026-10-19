@@ -1,0 +1,78 @@
+# ============================================================================
+# RL-CAT · .gitattributes
+# ============================================================================
+#  ⚠️ 为什么需要这个文件：
+#     开发在 Windows，部署在 Linux。若让 git 按平台自动转换行尾，
+#     `pi/*.sh` 会被 checkout 成 CRLF ⇒ 在 Pi 上执行时报
+#     `bash: $'\r': command not found`，而且极难联想到"是 git 干的"。
+#
+#  ⚠️ 反过来也有坑：CubeMX / Keil 生成的工程文件本来就带 CRLF，
+#     若强行归一成 LF，可能让 CubeMX 重新生成时判定"文件被外部修改"，
+#     或让 Keil 的 .uvprojx 解析异常。
+#
+#  ⇒ 策略：**我们手写的源码统一 LF；工具生成的 Windows 文件保持原字节（-text）。**
+# ============================================================================
+
+# ------------------------------------------------- 我们手写的：统一 LF 入库 ----
+*.c        text eol=lf
+*.h        text eol=lf
+*.py       text eol=lf
+*.sh       text eol=lf
+*.md       text eol=lf
+*.json     text eol=lf
+*.urdf     text eol=lf
+*.yml      text eol=lf
+*.yaml     text eol=lf
+*.csv      text eol=lf
+.gitignore     text eol=lf
+.gitattributes text eol=lf
+platformio.ini text eol=lf
+CMakeLists.txt text eol=lf
+
+# ⚠️ Windows 批处理必须是 CRLF，否则 cmd 解析异常
+*.cmd      text eol=crlf
+*.bat      text eol=crlf
+
+# -------------------------------- 工具生成 / 第三方提供的：保持原字节 ----
+#  ⚠️ `-text` = 不做任何行尾转换，git 原样存储与检出。
+#     这些文件不靠人维护，改动应当由 CubeMX / Keil 自己写出来。
+*.ioc        -text
+*.mxproject  -text
+*.uvprojx    -text
+*.uvoptx     -text
+*.scvd       -text
+*.dbgconf    -text
+*.lst        -text
+*.s          -text
+*.sdkconfig  -text
+
+# ---------------------------------------------------------------- 明确二进制 ----
+# 这些不能做行尾转换，也不能当作文本做 diff
+*.npz      binary
+*.onnx     binary
+*.pt       binary
+*.pth      binary
+*.stl      binary
+*.STL      binary
+*.hex      binary
+*.bin      binary
+*.elf      binary
+*.axf      binary
+*.xlsx     binary
+*.docx     binary
+*.pdf      binary
+*.png      binary
+*.jpg      binary
+*.jpeg     binary
+*.gif      binary
+*.zip      binary
+*.exe      binary
+*.dll      binary
+*.so       binary
+*.lib      binary
+*.o        binary
+*.pyc      binary
+
+# ⚠️ 训练权重不做语言统计，避免仓库显示成"99% 二进制"
+*.npz      linguist-detectable=false
+*.onnx     linguist-detectable=false

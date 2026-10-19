@@ -1,0 +1,31 @@
+﻿cff-version: 1.2.0
+message: "如果本项目对你的研究或产品有帮助，请按以下格式引用。"
+title: "RL-CAT: a 12-DOF quadruped robot with an open, end-to-end RL pipeline"
+abstract: >-
+  A complete open-source 12-DOF quadruped platform: mechanical design, electronics,
+  STM32 real-time firmware (100 Hz), Raspberry Pi 5 policy runtime, ESP32-C3 wireless
+  bridge, and a legged_gym-based reinforcement learning pipeline.
+  This release documents a quantified "stand on the ground" milestone
+  (reach error 1.23 deg, drift 0.00 deg) together with a detailed catalogue of the
+  25 engineering pitfalls encountered on the way to it.
+  Sim-to-real locomotion is work in progress.
+type: software
+authors:
+  - name: "vrrrrs"
+    # ⚠️ 想署真名/ORCID/邮箱，在这里填（可多作者，格式见 CFF 规范）
+    # family-names: "<姓>"
+    # given-names: "<名>"
+    # orcid: "https://orcid.org/0000-0000-0000-0000"
+    # email: "<you@example.com>"
+license: Apache-2.0
+repository-code: "https://github.com/vrrrrs/RL-CAT"
+url: "https://github.com/vrrrrs/RL-CAT"
+keywords:
+  - quadruped robot
+  - reinforcement learning
+  - sim-to-real
+  - legged locomotion
+  - STM32
+  - Isaac Gym
+version: "0.2.0"
+date-released: "2026-10-18"

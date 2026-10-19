@@ -1,0 +1,115 @@
+# ============================================================================
+# RL-CAT · .gitignore
+# ============================================================================
+#  ⚠️ 原则：**只有"人写的东西"进 git**。
+#     可再生成的（构建产物、日志、缓存）、第三方 SDK、体积大的二进制
+#     （CAD、训练权重、视频）一律排除，另用归档备份。
+#
+#  ⚠️ 新增排除项时照这三条问自己：
+#     ① 删掉后能不能几秒内重新生成？  → 能 ⇒ 排除
+#     ② 是不是别人提供的 SDK/资源？    → 是 ⇒ 排除（还涉及再分发许可）
+#     ③ 单个文件 > 5 MB 且是二进制？   → 是 ⇒ 排除（git 不适合存二进制）
+# ============================================================================
+
+# ---------------------------------------------------------------- Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+*.egg-info/
+.venv/
+venv/
+
+# ------------------------------------------- 本机专用（绝不要提交）--------
+# ⚠️ `.pi-access/` 里曾经放过 SSH 私钥。私钥现在在 ~/.ssh/rlcat_pi_ed25519，
+#    但网络配置、临时日志、实验脚本仍然不该进仓库。
+.pi-access/
+.build-probe/
+
+# ------------------------------------------------------ 构建产物（可重生）--
+firmware/stm32/build/
+firmware/stm32/build-host/
+firmware/stm32/MDK-ARM/stm32/
+firmware/stm32/MDK-ARM/DebugConfig/
+firmware/stm32/MDK-ARM/Listings/
+firmware/stm32/MDK-ARM/Objects/
+# ⚠️ Keil 的 GUI 布局文件把【用户名】写进文件名（stm32.uvguix.<Name>）——
+#    既泄露个人信息，又是纯本机状态，绝不提交。
+firmware/stm32/MDK-ARM/*.uvguix.*
+# 汇编 listing / 构建日志：可再生的产物
+firmware/stm32/MDK-ARM/*.lst
+firmware/stm32/MDK-ARM/build.log
+firmware/stm32/MDK-ARM/_quarantine/
+
+# ⚠️ CubeMX 的工程缓存：内容全是【绝对路径】（C:/Users/<name>/...），
+#    既泄露用户名，换机器后又全部失效。CubeMX 打开 .ioc 时会自动重建。
+firmware/stm32/.mxproject
+firmware/esp32/.pio/
+firmware/esp32/build-host/
+# ⚠️ PlatformIO 的 pip 临时目录：本仓库里堆了约 100 个，合计 29 MB 纯垃圾
+firmware/esp32/pip-unpack-*/
+firmware/esp32/pip-install-*/
+firmware/esp32/pip-build-tracker-*/
+firmware/esp32/pip-ephem-wheel-cache-*/
+
+# ------------------------------------ 第三方 SDK / 资源（大 + 有许可问题）--
+# ⚠️ `reference/` 是 402 MB 厂商资料（WitMotion 占 385 MB），**不可再分发**
+reference/
+
+# ⚠️ ST 提供的 CMSIS/HAL 驱动（65 MB）。重新从上游获取即可。
+firmware/stm32/Drivers/
+
+# ⚠️ legged_gym 自带的示例机器人资源；只有 `rlcat/` 是我们自己的，必须保留。
+Sim/legged_gym/resources/robots/a1/
+Sim/legged_gym/resources/robots/anymal_b/
+Sim/legged_gym/resources/robots/anymal_c/
+Sim/legged_gym/resources/robots/cassie/
+
+# -------------------------------------------------- 训练产物（体积大）------
+# ⚠️ 9 轮训练日志合计约 600 MB。
+#    **但被选中的检查点要单独归档**（见 docs/49-progress-review.md §3.3）：
+#       Sim/legged_gym/logs/rlcat_flat/Oct06_03-32-41_/model_500.pt  （1.3 MB）
+#    ⇒ 它不靠 git 保存，另存到备份目录。
+Sim/legged_gym/logs/
+Sim/RL/logs/
+Sim/RL/videos/
+Sim/RL/eval_frames/
+
+# ---------------------------------- 机械 CAD（体积大，二进制无法 diff）------
+# ⚠️ 装配体 214 MB + 零件 60 MB。**不可再生，必须单独备份**，
+#    但不适合进 git（每次改动都会存整份副本）。
+# ⚠️ 机械：**只发布 step/ 与 stl/**（见 hardware/mechanical/README.md）。
+#    以下均不发布：
+# ⚠️ 机械：**只发布 step/ 与 stl/**（见 hardware/mechanical/README.md）。
+#    SolidWorks 原生文件、厂商件 3D 模型、切片文件均不发布。
+#    ⚠️ 不在此处写 *.step / *.SLDPRT 之类的全局规则 —— 会误伤要发布的 step/。
+hardware/mechanical/装配体/
+hardware/mechanical/零件/
+hardware/mechanical/Opensource/
+hardware/mechanical/参数.xlsx
+hardware/mechanical/质量属性.txt
+hardware/mechanical/URDF/meshes/
+hardware/mechanical/URDF/parts.json
+hardware/mechanical/URDF/export_report.json
+hardware/mechanical/URDF/user_model.json
+# 切片文件（打印机相关，参数已在 README §3 给出）
+*.gcode
+*.3mf
+
+# ⚠️ 立创 EDA 的自动备份（每次保存一份整包），不是设计源文件
+hardware/electronics/*_backup/
+*.SLDASM
+*.SLDPRT
+*.SLDDRW
+
+# --------------------------------------------------------------- 操作系统 --
+Thumbs.db
+desktop.ini
+.DS_Store
+*.swp
+*~
+
+# ---------------------------------------- 原始拍摄素材（视频/原图，体积大）----
+# ⚠️ 不进 git。处理后的 web 用图在 docs/pictures/ 里（已压缩到百 KB 级）。
+素材/

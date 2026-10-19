@@ -1,0 +1,12 @@
+{
+  "status": "ok",
+  "coordinate_schema_version": 3,
+  "coordinate_frame": "z_up_x_forward",
+  "rotation_convention": "Rz(yaw) * Ry(pitch) * Rx(roll)",
+  "rpy_unit": "radian",
+  "warnings": [],
+  "errors": [],
+  "urdf_file": "robot.urdf",
+  "mesh_mode": "per_part",
+  "mesh_files": []
+}

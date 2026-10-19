@@ -1,0 +1,1043 @@
+{
+  "robot_name": "CAT_defeature.SLDASM",
+  "coordinate_schema_version": 3,
+  "coordinate_frame": "z_up_x_forward",
+  "links": [
+    {
+      "link_id": "link_1",
+      "name": "base_link",
+      "part_ids": [
+        "part_1",
+        "part_2"
+      ],
+      "mass": 0.73,
+      "inertia": {
+        "ixx": 0.000832256,
+        "iyy": 0.001664806,
+        "izz": 0.002127336,
+        "ixy": 0,
+        "ixz": 0,
+        "iyz": 0
+      },
+      "visual_meshes": [
+        "meshes/part_1.stl"
+      ],
+      "visuals_explicit": true,
+      "collision_meshes": [
+        "meshes/part_2.stl"
+      ],
+      "sites": [],
+      "collision": {
+        "schema_version": 1,
+        "mode": "legacy_mesh",
+        "shapes": []
+      },
+      "mass_properties": {
+        "source": "manual_com",
+        "quality": "manual",
+        "units": "kg_m2",
+        "mass": 0.73,
+        "com_xyz_cad": [
+          2.77555756156289e-14,
+          3.46944695195361e-15,
+          13.403772820129001
+        ],
+        "inertia_com_cad": {
+          "ixx": 0.000832256,
+          "iyy": 0.001664806,
+          "izz": 0.002127336,
+          "ixy": 0,
+          "ixz": 0,
+          "iyz": 0
+        }
+      }
+    },
+    {
+      "link_id": "link_2",
+      "name": "lf_hip",
+      "part_ids": [
+        "part_3",
+        "part_4"
+      ],
+      "mass": 0.08,
+      "inertia": {
+        "ixx": 0.000021276999999999966,
+        "iyy": 0.000050848,
+        "izz": 0.000048749000000000024,
+        "ixy": -0.000004664999999999995,
+        "ixz": -0.0000043109999999999025,
+        "iyz": 0.0000014550000000000166
+      },
+      "visual_meshes": [
+        "meshes/part_3.stl"
+      ],
+      "visuals_explicit": true,
+      "collision_meshes": [
+        "meshes/part_4.stl"
+      ],
+      "sites": [],
+      "collision": {
+        "schema_version": 1,
+        "mode": "legacy_mesh",
+        "shapes": []
+      },
+      "mass_properties": {
+        "source": "manual_com",
+        "quality": "manual",
+        "units": "kg_m2",
+        "mass": 0.08,
+        "com_xyz_cad": [
+          86.41449512473828,
+          60.459242000348695,
+          13.253194437895672
+        ],
+        "inertia_com_cad": {
+          "ixx": 0.000021276999999999966,
+          "iyy": 0.000050848,
+          "izz": 0.000048749000000000024,
+          "ixy": -0.000004664999999999995,
+          "ixz": -0.0000043109999999999025,
+          "iyz": 0.0000014550000000000166
+        }
+      }
+    },
+    {
+      "link_id": "link_3",
+      "name": "lf_thigh",
+      "part_ids": [
+        "part_5",
+        "part_6"
+      ],
+      "mass": 0.07,
+      "inertia": {
+        "ixx": 0.0000329230000000001,
+        "iyy": 0.000044583000000000044,
+        "izz": 0.000030092999999999873,
+        "ixy": 0.0000064539999999999834,
+        "ixz": 0.000018460999999999968,
+        "iyz": 0.000006968000000000042
+      },
+      "visual_meshes": [
+        "meshes/part_5.stl"
+      ],
+      "visuals_explicit": true,
+      "collision_meshes": [
+        "meshes/part_6.stl"
+      ],
+      "sites": [],
+      "collision": {
+        "schema_version": 1,
+        "mode": "legacy_mesh",
+        "shapes": []
+      },
+      "mass_properties": {
+        "source": "manual_com",
+        "quality": "manual",
+        "units": "kg_m2",
+        "mass": 0.07,
+        "com_xyz_cad": [
+          62.94097315221133,
+          69.99493378950667,
+          -39.742201298253285
+        ],
+        "inertia_com_cad": {
+          "ixx": 0.0000329230000000001,
+          "iyy": 0.000044583000000000044,
+          "izz": 0.000030092999999999873,
+          "ixy": 0.0000064539999999999834,
+          "ixz": 0.000018460999999999968,
+          "iyz": 0.000006968000000000042
+        }
+      }
+    },
+    {
+      "link_id": "link_4",
+      "name": "lf_calf",
+      "part_ids": [
+        "part_7",
+        "part_8"
+      ],
+      "mass": 0.014,
+      "inertia": {
+        "ixx": 0.000010210999999999925,
+        "iyy": 0.000022339,
+        "izz": 0.000012357000000000075,
+        "ixy": 2.3799999999995613e-7,
+        "ixz": -0.000010726999999999992,
+        "iyz": -2.1500000000003897e-7
+      },
+      "visual_meshes": [
+        "meshes/part_7.stl"
+      ],
+      "visuals_explicit": true,
+      "collision_meshes": [
+        "meshes/part_8.stl"
+      ],
+      "sites": [],
+      "collision": {
+        "schema_version": 1,
+        "mode": "legacy_mesh",
+        "shapes": []
+      },
+      "mass_properties": {
+        "source": "manual_com",
+        "quality": "manual",
+        "units": "kg_m2",
+        "mass": 0.014,
+        "com_xyz_cad": [
+          78.59693619659828,
+          91.70098856479181,
+          -85.68351503495894
+        ],
+        "inertia_com_cad": {
+          "ixx": 0.000010210999999999925,
+          "iyy": 0.000022339,
+          "izz": 0.000012357000000000075,
+          "ixy": 2.3799999999995613e-7,
+          "ixz": -0.000010726999999999992,
+          "iyz": -2.1500000000003897e-7
+        }
+      }
+    },
+    {
+      "link_id": "link_5",
+      "name": "lb_hip",
+      "part_ids": [
+        "part_9",
+        "part_10"
+      ],
+      "mass": 0.08,
+      "inertia": {
+        "ixx": 0.000021277000000000034,
+        "iyy": 0.000050848,
+        "izz": 0.00004874899999999997,
+        "ixy": 0.000004665000000000005,
+        "ixz": 0.000004311000000000097,
+        "iyz": 0.0000014549999999999835
+      },
+      "visual_meshes": [
+        "meshes/part_9.stl"
+      ],
+      "visuals_explicit": true,
+      "collision_meshes": [
+        "meshes/part_10.stl"
+      ],
+      "sites": [],
+      "collision": {
+        "schema_version": 1,
+        "mode": "legacy_mesh",
+        "shapes": []
+      },
+      "mass_properties": {
+        "source": "manual_com",
+        "quality": "manual",
+        "units": "kg_m2",
+        "mass": 0.08,
+        "com_xyz_cad": [
+          -86.41449512473821,
+          60.45924200034869,
+          13.25319443789593
+        ],
+        "inertia_com_cad": {
+          "ixx": 0.000021277000000000034,
+          "iyy": 0.000050848,
+          "izz": 0.00004874899999999997,
+          "ixy": 0.000004665000000000005,
+          "ixz": 0.000004311000000000097,
+          "iyz": 0.0000014549999999999835
+        }
+      }
+    },
+    {
+      "link_id": "link_6",
+      "name": "lb_thigh",
+      "part_ids": [
+        "part_11",
+        "part_12"
+      ],
+      "mass": 0.07,
+      "inertia": {
+        "ixx": 0.00003420900000000009,
+        "iyy": 0.00004471100000000004,
+        "izz": 0.000028987999999999872,
+        "ixy": 0.000006243999999999987,
+        "ixz": 0.000018382999999999953,
+        "iyz": 0.000007193000000000044
+      },
+      "visual_meshes": [
+        "meshes/part_11.stl"
+      ],
+      "visuals_explicit": true,
+      "collision_meshes": [
+        "meshes/part_12.stl"
+      ],
+      "sites": [],
+      "collision": {
+        "schema_version": 1,
+        "mode": "legacy_mesh",
+        "shapes": []
+      },
+      "mass_properties": {
+        "source": "manual_com",
+        "quality": "manual",
+        "units": "kg_m2",
+        "mass": 0.07,
+        "com_xyz_cad": [
+          -132.015670721019,
+          69.99493378950669,
+          -40.85715861483788
+        ],
+        "inertia_com_cad": {
+          "ixx": 0.00003420900000000009,
+          "iyy": 0.00004471100000000004,
+          "izz": 0.000028987999999999872,
+          "ixy": 0.000006243999999999987,
+          "ixz": 0.000018382999999999953,
+          "iyz": 0.000007193000000000044
+        }
+      }
+    },
+    {
+      "link_id": "link_7",
+      "name": "lb_calf",
+      "part_ids": [
+        "part_13",
+        "part_14"
+      ],
+      "mass": 0.014,
+      "inertia": {
+        "ixx": 0.000011217999999999925,
+        "iyy": 0.000022025,
+        "izz": 0.000011032000000000075,
+        "ixy": 2.2299999999996082e-7,
+        "ixz": -0.000010628000000000002,
+        "iyz": -2.2500000000003853e-7
+      },
+      "visual_meshes": [
+        "meshes/part_13.stl"
+      ],
+      "visuals_explicit": true,
+      "collision_meshes": [
+        "meshes/part_14.stl"
+      ],
+      "sites": [],
+      "collision": {
+        "schema_version": 1,
+        "mode": "legacy_mesh",
+        "shapes": []
+      },
+      "mass_properties": {
+        "source": "manual_com",
+        "quality": "manual",
+        "units": "kg_m2",
+        "mass": 0.014,
+        "com_xyz_cad": [
+          -117.39351743162284,
+          91.70098856479184,
+          -88.98074069086414
+        ],
+        "inertia_com_cad": {
+          "ixx": 0.000011217999999999925,
+          "iyy": 0.000022025,
+          "izz": 0.000011032000000000075,
+          "ixy": 2.2299999999996082e-7,
+          "ixz": -0.000010628000000000002,
+          "iyz": -2.2500000000003853e-7
+        }
+      }
+    },
+    {
+      "link_id": "link_8",
+      "name": "rf_hip",
+      "part_ids": [
+        "part_15",
+        "part_16"
+      ],
+      "mass": 0.08,
+      "inertia": {
+        "ixx": 0.000021277000000000034,
+        "iyy": 0.000050848,
+        "izz": 0.00004874899999999997,
+        "ixy": -0.000004665000000000005,
+        "ixz": 0.000004311000000000097,
+        "iyz": -0.0000014549999999999835
+      },
+      "visual_meshes": [
+        "meshes/part_15.stl"
+      ],
+      "visuals_explicit": true,
+      "collision_meshes": [
+        "meshes/part_16.stl"
+      ],
+      "sites": [],
+      "collision": {
+        "schema_version": 1,
+        "mode": "legacy_mesh",
+        "shapes": []
+      },
+      "mass_properties": {
+        "source": "manual_com",
+        "quality": "manual",
+        "units": "kg_m2",
+        "mass": 0.08,
+        "com_xyz_cad": [
+          86.41449512473818,
+          -60.45924200034867,
+          13.25319443789563
+        ],
+        "inertia_com_cad": {
+          "ixx": 0.000021277000000000034,
+          "iyy": 0.000050848,
+          "izz": 0.00004874899999999997,
+          "ixy": -0.000004665000000000005,
+          "ixz": 0.000004311000000000097,
+          "iyz": -0.0000014549999999999835
+        }
+      }
+    },
+    {
+      "link_id": "link_9",
+      "name": "rf_thigh",
+      "part_ids": [
+        "part_17",
+        "part_18"
+      ],
+      "mass": 0.07,
+      "inertia": {
+        "ixx": 0.000032459048053032896,
+        "iyy": 0.00004458295194696728,
+        "izz": 0.00003055599999999986,
+        "ixy": -0.000006541044533762189,
+        "ixz": 0.0000184900252935656,
+        "iyz": -0.000006885932082391166
+      },
+      "visual_meshes": [
+        "meshes/part_17.stl"
+      ],
+      "visuals_explicit": true,
+      "collision_meshes": [
+        "meshes/part_18.stl"
+      ],
+      "sites": [],
+      "collision": {
+        "schema_version": 1,
+        "mode": "legacy_mesh",
+        "shapes": []
+      },
+      "mass_properties": {
+        "source": "manual_com",
+        "quality": "manual",
+        "units": "kg_m2",
+        "mass": 0.07,
+        "com_xyz_cad": [
+          62.46749831810897,
+          -69.99506467495848,
+          -39.298097626570076
+        ],
+        "inertia_com_cad": {
+          "ixx": 0.000032459048053032896,
+          "iyy": 0.00004458295194696728,
+          "izz": 0.00003055599999999986,
+          "ixy": -0.000006541044533762189,
+          "ixz": 0.0000184900252935656,
+          "iyz": -0.000006885932082391166
+        }
+      }
+    },
+    {
+      "link_id": "link_10",
+      "name": "rf_calf",
+      "part_ids": [
+        "part_19",
+        "part_20"
+      ],
+      "mass": 0.014,
+      "inertia": {
+        "ixx": 0.000010379001697177819,
+        "iyy": 0.000022024998302822113,
+        "izz": 0.000011871000000000075,
+        "ixy": -2.310427781403973e-7,
+        "ixz": -0.000010602000793340775,
+        "iyz": 2.1596105667803963e-7
+      },
+      "visual_meshes": [
+        "meshes/part_19.stl"
+      ],
+      "visuals_explicit": true,
+      "collision_meshes": [
+        "meshes/part_20.stl"
+      ],
+      "sites": [],
+      "collision": {
+        "schema_version": 1,
+        "mode": "legacy_mesh",
+        "shapes": []
+      },
+      "mass_properties": {
+        "source": "manual_com",
+        "quality": "manual",
+        "units": "kg_m2",
+        "mass": 0.014,
+        "com_xyz_cad": [
+          77.48202070107438,
+          -91.70107573417792,
+          -85.50106204643113
+        ],
+        "inertia_com_cad": {
+          "ixx": 0.000010379001697177819,
+          "iyy": 0.000022024998302822113,
+          "izz": 0.000011871000000000075,
+          "ixy": -2.310427781403973e-7,
+          "ixz": -0.000010602000793340775,
+          "iyz": 2.1596105667803963e-7
+        }
+      }
+    },
+    {
+      "link_id": "link_11",
+      "name": "rb_hip",
+      "part_ids": [
+        "part_21",
+        "part_22"
+      ],
+      "mass": 0.08,
+      "inertia": {
+        "ixx": 0.000021276999999999966,
+        "iyy": 0.000050848,
+        "izz": 0.000048749000000000024,
+        "ixy": -0.000004665000000000005,
+        "ixz": -0.0000043109999999999025,
+        "iyz": -0.0000014549999999999835
+      },
+      "visual_meshes": [
+        "meshes/part_21.stl"
+      ],
+      "visuals_explicit": true,
+      "collision_meshes": [
+        "meshes/part_22.stl"
+      ],
+      "sites": [],
+      "collision": {
+        "schema_version": 1,
+        "mode": "legacy_mesh",
+        "shapes": []
+      },
+      "mass_properties": {
+        "source": "manual_com",
+        "quality": "manual",
+        "units": "kg_m2",
+        "mass": 0.08,
+        "com_xyz_cad": [
+          -86.41400000000002,
+          -60.458999999999996,
+          13.25300000000016
+        ],
+        "inertia_com_cad": {
+          "ixx": 0.000021276999999999966,
+          "iyy": 0.000050848,
+          "izz": 0.000048749000000000024,
+          "ixy": -0.000004665000000000005,
+          "ixz": -0.0000043109999999999025,
+          "iyz": -0.0000014549999999999835
+        }
+      }
+    },
+    {
+      "link_id": "link_12",
+      "name": "rb_thigh",
+      "part_ids": [
+        "part_23",
+        "part_24"
+      ],
+      "mass": 0.07,
+      "inertia": {
+        "ixx": 0.00003420900000000009,
+        "iyy": 0.00004471100000000004,
+        "izz": 0.000028987999999999872,
+        "ixy": 0.000006243999999999987,
+        "ixz": 0.000018382999999999953,
+        "iyz": 0.000007193000000000044
+      },
+      "visual_meshes": [
+        "meshes/part_23.stl"
+      ],
+      "visuals_explicit": true,
+      "collision_meshes": [
+        "meshes/part_24.stl"
+      ],
+      "sites": [],
+      "collision": {
+        "schema_version": 1,
+        "mode": "legacy_mesh",
+        "shapes": []
+      },
+      "mass_properties": {
+        "source": "manual_com",
+        "quality": "manual",
+        "units": "kg_m2",
+        "mass": 0.07,
+        "com_xyz_cad": [
+          -131.88832910117105,
+          -69.9949337895069,
+          -40.96733167934999
+        ],
+        "inertia_com_cad": {
+          "ixx": 0.00003420900000000009,
+          "iyy": 0.00004471100000000004,
+          "izz": 0.000028987999999999872,
+          "ixy": 0.000006243999999999987,
+          "ixz": 0.000018382999999999953,
+          "iyz": 0.000007193000000000044
+        }
+      }
+    },
+    {
+      "link_id": "link_13",
+      "name": "rb_calf",
+      "part_ids": [
+        "part_25",
+        "part_26"
+      ],
+      "mass": 0.014,
+      "inertia": {
+        "ixx": 0.000011832999999999926,
+        "iyy": 0.000022025,
+        "izz": 0.000010417000000000075,
+        "ixy": -2.160000000000354e-7,
+        "ixz": -0.000010605000000000004,
+        "iyz": 2.309999999999631e-7
+      },
+      "visual_meshes": [
+        "meshes/part_25.stl"
+      ],
+      "visuals_explicit": true,
+      "collision_meshes": [
+        "meshes/part_26.stl"
+      ],
+      "sites": [],
+      "collision": {
+        "schema_version": 1,
+        "mode": "legacy_mesh",
+        "shapes": []
+      },
+      "mass_properties": {
+        "source": "manual_com",
+        "quality": "manual",
+        "units": "kg_m2",
+        "mass": 0.014,
+        "com_xyz_cad": [
+          -118.09962628804715,
+          -91.70098856479197,
+          -89.99952544848743
+        ],
+        "inertia_com_cad": {
+          "ixx": 0.000011832999999999926,
+          "iyy": 0.000022025,
+          "izz": 0.000010417000000000075,
+          "ixy": -2.160000000000354e-7,
+          "ixz": -0.000010605000000000004,
+          "iyz": 2.309999999999631e-7
+        }
+      }
+    }
+  ],
+  "joints": [
+    {
+      "joint_id": "joint_1",
+      "name": "lf_hip",
+      "type": "revolute",
+      "parent": "base_link",
+      "child": "lf_hip",
+      "origin": {
+        "xyz": [
+          39.5,
+          55.2299999999999,
+          17.865
+        ],
+        "rpy": [
+          0,
+          1.5707963267948966,
+          0
+        ]
+      },
+      "axis": [
+        1,
+        0,
+        -3.552713678800501e-15
+      ],
+      "limit": {
+        "lower": 0,
+        "upper": 0.6981317,
+        "effort": 3,
+        "velocity": 8
+      },
+      "frame_orientation_mode": "manual",
+      "actuation": "auto"
+    },
+    {
+      "joint_id": "joint_2",
+      "name": "lf_thigh",
+      "type": "revolute",
+      "parent": "lf_hip",
+      "child": "lf_thigh",
+      "origin": {
+        "xyz": [
+          98.10000000000004,
+          75.22999999999999,
+          -1.7850000000001094
+        ],
+        "rpy": [
+          0,
+          1.5707963267948966,
+          1.5707963267949
+        ]
+      },
+      "axis": [
+        -3.552713678800501e-15,
+        1,
+        1.262177448353619e-29
+      ],
+      "limit": {
+        "lower": -0.61086524,
+        "upper": 0.52359878,
+        "effort": 3,
+        "velocity": 8
+      },
+      "frame_orientation_mode": "manual",
+      "actuation": "auto"
+    },
+    {
+      "joint_id": "joint_3",
+      "name": "lf_calf",
+      "type": "revolute",
+      "parent": "lf_thigh",
+      "child": "lf_calf",
+      "origin": {
+        "xyz": [
+          46.93002117333962,
+          83.72999999999983,
+          -57.02740460804613
+        ],
+        "rpy": [
+          0,
+          1.5707963267948966,
+          1.5707963267949
+        ]
+      },
+      "axis": [
+        -3.552713678800501e-15,
+        1,
+        1.262177448353619e-29
+      ],
+      "limit": {
+        "lower": -1.04719755,
+        "upper": 1.04719755,
+        "effort": 3,
+        "velocity": 8
+      },
+      "frame_orientation_mode": "manual",
+      "actuation": "auto"
+    },
+    {
+      "joint_id": "joint_4",
+      "name": "lb_hip",
+      "type": "revolute",
+      "parent": "base_link",
+      "child": "lb_hip",
+      "origin": {
+        "xyz": [
+          -41,
+          55.230000000000004,
+          17.865
+        ],
+        "rpy": [
+          0,
+          1.5707963267948966,
+          0
+        ]
+      },
+      "axis": [
+        1,
+        0,
+        -3.552713678800501e-15
+      ],
+      "limit": {
+        "lower": 0,
+        "upper": 0.6981317,
+        "effort": 3,
+        "velocity": 8
+      },
+      "frame_orientation_mode": "manual",
+      "actuation": "auto"
+    },
+    {
+      "joint_id": "joint_5",
+      "name": "lb_thigh",
+      "type": "revolute",
+      "parent": "lb_hip",
+      "child": "lb_thigh",
+      "origin": {
+        "xyz": [
+          -98.10000000000008,
+          75.23,
+          -1.7849999999998007
+        ],
+        "rpy": [
+          0,
+          1.5707963267948966,
+          1.5707963267949
+        ]
+      },
+      "axis": [
+        -3.552713678800501e-15,
+        1,
+        1.262177448353619e-29
+      ],
+      "limit": {
+        "lower": -0.61086524,
+        "upper": 0.52359878,
+        "effort": 3,
+        "velocity": 8
+      },
+      "frame_orientation_mode": "manual",
+      "actuation": "auto"
+    },
+    {
+      "joint_id": "joint_6",
+      "name": "lb_calf",
+      "type": "revolute",
+      "parent": "lb_thigh",
+      "child": "lb_calf",
+      "origin": {
+        "xyz": [
+          -147.4604148999839,
+          83.72999999999985,
+          -58.65009861858403
+        ],
+        "rpy": [
+          0,
+          1.5707963267948966,
+          1.5707963267949
+        ]
+      },
+      "axis": [
+        -3.552713678800501e-15,
+        1,
+        1.262177448353619e-29
+      ],
+      "limit": {
+        "lower": -1.04719755,
+        "upper": 1.04719755,
+        "effort": 3,
+        "velocity": 8
+      },
+      "frame_orientation_mode": "manual",
+      "actuation": "auto"
+    },
+    {
+      "joint_id": "joint_7",
+      "name": "rf_hip",
+      "type": "revolute",
+      "parent": "base_link",
+      "child": "rf_hip",
+      "origin": {
+        "xyz": [
+          41,
+          -55.230000000000004,
+          17.865
+        ],
+        "rpy": [
+          0,
+          1.5707963267948966,
+          0
+        ]
+      },
+      "axis": [
+        -1,
+        0,
+        3.552713678800501e-15
+      ],
+      "limit": {
+        "lower": 0,
+        "upper": 0.6981317,
+        "effort": 3,
+        "velocity": 8
+      },
+      "frame_orientation_mode": "manual",
+      "actuation": "auto"
+    },
+    {
+      "joint_id": "joint_8",
+      "name": "rf_thigh",
+      "type": "revolute",
+      "parent": "rf_hip",
+      "child": "rf_thigh",
+      "origin": {
+        "xyz": [
+          98.09999999999994,
+          -75.23,
+          -1.785000000000203
+        ],
+        "rpy": [
+          0,
+          1.5707963267948966,
+          1.5707999999999998
+        ]
+      },
+      "axis": [
+        0.0000036732051031940225,
+        -0.999999999993254,
+        -1.3049846015157209e-20
+      ],
+      "limit": {
+        "lower": -0.61086524,
+        "upper": 0.52359878,
+        "effort": 3,
+        "velocity": 8
+      },
+      "frame_orientation_mode": "manual",
+      "actuation": "auto"
+    },
+    {
+      "joint_id": "joint_9",
+      "name": "rf_calf",
+      "type": "revolute",
+      "parent": "rf_thigh",
+      "child": "rf_calf",
+      "origin": {
+        "xyz": [
+          46.24099142216737,
+          -83.73019048883232,
+          -56.38106204643101
+        ],
+        "rpy": [
+          0,
+          1.5707963267948966,
+          1.5707999999999998
+        ]
+      },
+      "axis": [
+        0.0000036732051031940225,
+        -0.999999999993254,
+        -1.3049846015157209e-20
+      ],
+      "limit": {
+        "lower": -1.04719755,
+        "upper": 1.04719755,
+        "effort": 3,
+        "velocity": 8
+      },
+      "frame_orientation_mode": "manual",
+      "actuation": "auto"
+    },
+    {
+      "joint_id": "joint_10",
+      "name": "rb_hip",
+      "type": "revolute",
+      "parent": "base_link",
+      "child": "rb_hip",
+      "origin": {
+        "xyz": [
+          -41,
+          -55.230000000000004,
+          17.865
+        ],
+        "rpy": [
+          0,
+          1.5707963267948966,
+          0
+        ]
+      },
+      "axis": [
+        -1,
+        0,
+        3.552713678800501e-15
+      ],
+      "limit": {
+        "lower": 0,
+        "upper": 0.6981317,
+        "effort": 3,
+        "velocity": 8
+      },
+      "frame_orientation_mode": "manual",
+      "actuation": "auto"
+    },
+    {
+      "joint_id": "joint_11",
+      "name": "rb_thigh",
+      "type": "revolute",
+      "parent": "rb_hip",
+      "child": "rb_thigh",
+      "origin": {
+        "xyz": [
+          -98.10000000000008,
+          -75.23,
+          -1.7849999999997
+        ],
+        "rpy": [
+          0,
+          1.5707963267948966,
+          1.5707963267949
+        ]
+      },
+      "axis": [
+        3.552713678800501e-15,
+        -1,
+        -1.262177448353619e-29
+      ],
+      "limit": {
+        "lower": -0.61086524,
+        "upper": 0.52359878,
+        "effort": 3,
+        "velocity": 8
+      },
+      "frame_orientation_mode": "manual",
+      "actuation": "auto"
+    },
+    {
+      "joint_id": "joint_12",
+      "name": "rb_calf",
+      "type": "revolute",
+      "parent": "rb_thigh",
+      "child": "rb_calf",
+      "origin": {
+        "xyz": [
+          -147.27508360455877,
+          -83.73000000000019,
+          -58.81044302751633
+        ],
+        "rpy": [
+          0,
+          1.5707963267948966,
+          1.5707963267949
+        ]
+      },
+      "axis": [
+        3.552713678800501e-15,
+        -1,
+        -1.262177448353619e-29
+      ],
+      "limit": {
+        "lower": -1.04719755,
+        "upper": 1.04719755,
+        "effort": 3,
+        "velocity": 8
+      },
+      "frame_orientation_mode": "manual",
+      "actuation": "auto"
+    }
+  ],
+  "loop_constraints": [],
+  "base_origin_mode": "cad_original",
+  "base_origin_xyz": [
+    0,
+    0,
+    0
+  ],
+  "import_source": {
+    "schema_version": 1,
+    "format": "urdf",
+    "entry_file": "CAT_defeature.SLDASM/urdf/CAT_defeature.SLDASM.urdf",
+    "archive_key": "__robot_source.zip"
+  }
+}

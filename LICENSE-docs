@@ -1,0 +1,38 @@
+﻿# 文档许可：Creative Commons Attribution 4.0 International (CC-BY-4.0)
+
+Copyright 2026 vrrrrs
+
+本仓库中**文档类内容**（包括但不限于 `docs/`、`*.md`、图表、示意图）按
+**CC-BY-4.0** 授权。
+
+## 你可以做什么
+
+- ✅ 复制、分发、公开传播
+- ✅ 修改、翻译、再创作
+- ✅ **商业使用**
+
+## 你必须做什么
+
+- **署名**：注明原作者（vrrrrs）、保留版权声明
+- **标注修改**：如果你改过，要说明改了哪里
+- **给出许可链接**：指向本许可
+- 不得施加额外限制
+
+## 完整法律文本
+
+CC-BY-4.0 要求"提供许可原文**或**其 URI/超链接"（legalcode §3(a)(1)(C)）。
+本文件采用**链接方式**，官方全文：
+
+    https://creativecommons.org/licenses/by/4.0/legalcode
+
+中文版（仅供参考，以英文版为准）：
+
+    https://creativecommons.org/licenses/by/4.0/legalcode.zh-Hans
+
+⚠️ 若你要**离线或纸质再分发**，请把上述链接指向的全文一并附上。
+
+## 署名写法（建议）
+
+    RL-CAT — 12-DOF quadruped robot
+    vrrrrs — https://github.com/vrrrrs/RL-CAT
+    Licensed under CC-BY-4.0

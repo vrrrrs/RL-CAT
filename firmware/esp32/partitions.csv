@@ -1,0 +1,11 @@
+# RL-CAT ESP32-C3 bridge -- partition table
+#
+# The chip has 4 MB of embedded flash but IDF's default "single app" table only
+# gives the application 1 MB, and P1 already uses ~830 KB of it (WiFi + lwIP +
+# IDF).  A 2 MB factory partition leaves room for P2..P4 without going near the
+# limit.  No OTA layout: this board is flashed over USB-Serial-JTAG.
+#
+# Name,     Type, SubType,  Offset,   Size,     Flags
+nvs,        data, nvs,      0x9000,   0x6000,
+phy_init,   data, phy,      0xf000,   0x1000,
+factory,    app,  factory,  0x10000,  0x200000,
